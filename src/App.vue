@@ -145,26 +145,37 @@ header {
       position: relative;
       top: -4px;
     }
-    .text-action {
+    .btn {
       color: var(--color-blue-dark);
-      position: relative;
-      font-size: 12px;
       font-weight: 700;
-      cursor: pointer;
 
       i {
         color: var(--color-blue);
-        font-size: 11px;
-        position: absolute;
-        right: -10px;
-        top: 2px;
       }
     }
   }
 }
 
+.btn {
+  box-shadow: none !important;
+  outline: none !important;
 
-.text-action {
-
+  i {
+    position: absolute;
+    right: -5px;
+    top: 7px;
+  }
 }
+
+.btn-xs {
+  position: relative;
+  font-size: 12px;
+
+  i {
+    font-size: 11px;
+  }
+}
+
+
+
 </style>

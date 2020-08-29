@@ -10,7 +10,6 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <div class="nav-item nav-item-divider"></div>
       <ul class="navbar-nav mr-auto">
@@ -46,35 +45,32 @@
   </nav>
   <div class="container">
     <div class="row pt-4 pb-4">
-      <div class="col text-left box-title">
-        <div v-show="!enableEdit">
-          <div class="d-flex align-items-center" >
-            <h1>{{ title }}</h1>
-            <span 
-              class="pl-4 pr-1 d-flex align-self-center text-action"
-              @click="enableEdit = !enableEdit"
-            >
-              Edit
-              <i class="far fa-pencil-alt"></i>
-            </span>
-          </div>
-        </div>
-        <div v-show="enableEdit">
-          <div class="d-flex align-items-center">
-            <input
-              type="text"
-              class="form-control"
-              v-model="title"
-              />
-            <span 
-              class="pl-4 pr-1 d-flex align-self-center text-action"
-              @click="enableEdit = !enableEdit"
-            >
-              Save
-              <i class="far fa-check-circle"></i>
-            </span>
-          </div>
-        </div>
+      <div class="col d-flex align-items-center box-title">
+        <h1
+          v-show="!enableEdit"
+        >
+          {{ title }}
+        </h1>
+        <input
+          type="text"
+          class="form-control"
+          v-model="title"
+          v-show="enableEdit"
+        />
+        <button
+          class="btn btn-xs"
+          @click="enableEdit = !enableEdit"
+        >
+          {{ enableEdit ? 'Save' : 'Edit'}}
+          <i
+            class="far fa-pencil-alt"
+            v-show="!enableEdit"
+          ></i>
+          <i 
+            class="far fa-check-circle"
+            v-show="enableEdit"
+          ></i>
+        </button>
       </div>
     </div>
     <div class="row">
