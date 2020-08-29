@@ -1,4 +1,4 @@
-# qrcode-panel
+# QR Code Panel
 
 [![Build Status](https://travis-ci.com/shayanypn/qrcode-panel.svg?branch=master)](https://travis-ci.com/shayanypn/qrcode-panel)
 
