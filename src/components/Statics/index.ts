@@ -3,9 +3,9 @@ import WithRender from "./template.html";
 
 @WithRender
 @Component
-export default class Header extends Vue {
-
-  private enableEdit: boolean = false;
+export default class Statics extends Vue {
 
   @Prop() private title!: string;
+  @Prop() private face!: string;
+  @Prop() private denominator!: string;
 }

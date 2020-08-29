@@ -1,16 +1,19 @@
 <template>
   <div id="app">
     <Header title="Egoditor GmbH" />
+    <Account />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import Header from "@/components/Header";
+import Account from "@/containers/Account";
 
 @Component({
   components: {
     Header,
+    Account,
   },
 })
 export default class App extends Vue {}
@@ -20,10 +23,16 @@ export default class App extends Vue {}
 :root {
   --color-base: #f5f8fa;
   --color-white: #ffffff;
+  --color-blue-lightest: #afbfc7;
   --color-blue: #00bfff;
-  --color-blue-dark: #1974d2;
+  --color-blue-dark: #294270;
+  --color-blue-darkest: #1974d2;
+  --color-gray-light: #c7ced0;
   --color-gray: #707f86;
   --color-gray-darkest: #1B294B;
+
+  --shadow-default: rgba(0,0,0,.125);
+  --radius-default: 0.5em;
 }
 
 #app {
@@ -31,21 +40,68 @@ export default class App extends Vue {}
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: var(--color-base);
-  text-align: center;
   font-weight: 400;
   min-height: 100vh;
 }
 
-h1 {
+h1, h2, h3, h4 {
   font-weight: 900;
 }
 
+i.far {
+  font-style: Regular;
+}
+
+/**
+ *
+ * Override bootsrap
+ * 
+*/
+@media (min-width: 114px) {
+  .col-mdlg {
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+}
+
+.btn {
+  box-shadow: none !important;
+  outline: none !important;
+
+  i {
+    position: absolute;
+    right: -5px;
+    top: 7px;
+  }
+}
+
+.btn-xs {
+  position: relative;
+  font-size: 12px;
+
+  i {
+    font-size: 11px;
+  }
+}
+
+.card {
+  box-shadow: 0 0 0.25em var(--shadow-default);
+  border: none;
+}
+
+
+/**
+ *
+ * Custom Styles
+ * 
+*/
 header {
   border-bottom: 2px solid #e6edf0;
   background: #fff;
 
   .navbar {
     box-shadow: 0 2px 5px 0 #d9dbe3;
+    background: var(--color-white);
   }
   .navbar-brand {
     display: flex;
@@ -96,7 +152,7 @@ header {
     }
     .nav-link {
       font-weight: bold;
-      color: var(--color-blue-dark);
+      color: var(--color-blue-darkest);
       border-top: none !important;
       border-left: none !important;
       border-right: none !important;
@@ -146,7 +202,7 @@ header {
       top: -4px;
     }
     .btn {
-      color: var(--color-blue-dark);
+      color: var(--color-blue-darkest);
       font-weight: 700;
 
       i {
@@ -156,26 +212,75 @@ header {
   }
 }
 
-.btn {
-  box-shadow: none !important;
-  outline: none !important;
+.bx {
+  background: var(--color-white);
+  border-radius: var(--radius-default);
+  padding: 1rem;
 
-  i {
-    position: absolute;
-    right: -5px;
-    top: 7px;
+  &.bx-who-are {
+    text-align: center;
+    color: var(--color-blue);
+    box-shadow: 0.25em 0.25em 0.75em var(--shadow-default);
+    margin-bottom: 1rem;
+
+    i {
+      color: var(--color-blue);
+      font-size: 1.5em;
+      padding: 0.5rem 0;
+    }
+    p {
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--color-blue-darkest);
+      margin: 0px;
+      font-size: 0.8rem;
+    }
+  }
+  &.bx-statics {
+    background: transparent;
+    border: 1px solid var(--color-gray-light);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.25rem;
+    position: relative;
+
+    p {
+      color: var(--color-blue-lightest);
+      opacity: .7;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: .8rem;
+      margin-bottom: 0.5rem;
+    }
+    strong {
+      color: var(--color-blue-dark);
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
+    em {
+      color: var(--color-blue-lightest);
+      font-size: 1rem;
+    }
+    span {
+      color: var(--color-gray-light);
+      transform: rotate(45deg);
+      line-height: 0.5;
+    }
+    .btn {
+      background: var(--color-blue);
+      border-color: var(--color-blue);
+      color: var(--color-white);
+      font-weight: 700;
+      font-size: .8rem;
+      border: none;
+      padding: .3rem .5rem;
+      text-transform: uppercase;
+      border-radius: 1rem;
+      position: absolute;
+      bottom: -14px;
+    }
   }
 }
-
-.btn-xs {
-  position: relative;
-  font-size: 12px;
-
-  i {
-    font-size: 11px;
-  }
-}
-
-
 
 </style>
