@@ -47,7 +47,7 @@
       "ecmaVersion": 2020
     },
     "rules": {
-      "no-inferrable-types": false,
+      "no-inferrable-types": 0,
       "@typescript-eslint/no-inferrable-types": "off"
     }
   },
