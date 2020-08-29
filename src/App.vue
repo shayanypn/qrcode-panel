@@ -1,98 +1,17 @@
 <template>
   <div id="app">
-    <header>
-      <nav class="navbar navbar-expand sticky-top">
-        <a class="navbar-brand" href="#">
-          <img src="https://cdn-web.qr-code-generator.com/wp-content/themes/qr/new_structure/assets/media/images/logos/egoditor/logo-icon-blue.svg">
-          <span class="text">
-            QR Code Generator
-            <span class="tag">PRO</span>
-          </span>
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <div class="nav-item nav-item-divider"></div>
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span class="icon-g-arrow-left">
-                  <i class="far fa-chevron-left"></i>
-                  <i class="far fa-bars"></i>
-                </span>
-              </a>
-            </li>
-          </ul>
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <i class="far fa-bell"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <i class="far fa-question-circle"></i>
-              </a>
-            </li>
-            <div class="nav-item nav-item-divider"></div>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <i class="far fa-user"></i>
-                Account
-              </a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-      <div class="container">
-        <div class="row pt-4 pb-4">
-          <div class="col text-left d-flex align-items-center">
-            <h1>Egoditor GmbH</h1>
-            <span class="pl-4 pr-1 d-flex align-self-center text-action">
-              Edit
-              <i class="far fa-pencil-alt"></i>
-            </span>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <ul class="nav nav-tabs">
-              <li class="nav-item">
-                <a class="nav-link active" href="#">Account</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Settings</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">User Management</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">White Label</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">API Keys</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Billing</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </header>
+    <Header title="Egoditor GmbH" />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import HelloWorld from "./components/HelloWorld.vue";
+import Header from "@/components/Header.ts";
 
 @Component({
   components: {
-    HelloWorld
-  }
+    Header,
+  },
 })
 export default class App extends Vue {}
 </script>
@@ -214,19 +133,32 @@ header {
       font-size: 12px;
     }
   }
-  .text-action {
-    color: var(--color-blue-dark);
-    position: relative;
-    font-size: 12px;
-    font-weight: 700;
-    cursor: pointer;
+  .box-title {
+    h1 {
+      padding-left: 0.75rem;
+    }
+    .form-control {
+      width: auto;
+      font-weight: 900;
+      font-size: 2.5rem;
+      height: calc(1.125em + .5rem + 2px);
+      position: relative;
+      top: -4px;
+    }
+    .text-action {
+      color: var(--color-blue-dark);
+      position: relative;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
 
-    i {
-      color: var(--color-blue);
-      font-size: 11px;
-      position: absolute;
-      right: -10px;
-      top: 2px;
+      i {
+        color: var(--color-blue);
+        font-size: 11px;
+        position: absolute;
+        right: -10px;
+        top: 2px;
+      }
     }
   }
 }

@@ -41,14 +41,15 @@
     "extends": [
       "plugin:vue/essential",
       "eslint:recommended",
-      "@vue/typescript/recommended",
-      "@vue/prettier",
-      "@vue/prettier/@typescript-eslint"
+      "@vue/typescript/recommended"
     ],
     "parserOptions": {
       "ecmaVersion": 2020
     },
-    "rules": {}
+    "rules": {
+      "no-inferrable-types": false,
+      "@typescript-eslint/no-inferrable-types": "off"
+    }
   },
   "browserslist": [
     "> 1%",
