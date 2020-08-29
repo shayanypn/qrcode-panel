@@ -6,7 +6,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "test:unit": "jest  --silent"
+    "test:unit": "jest --silent",
+    "test:unit:coverage": "jest --silent --coverage"
   },
   "dependencies": {
     "core-js": "^3.6.5",
