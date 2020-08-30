@@ -1,3 +1,4 @@
+
 # QR Code Panel
 
 [![Build Status](https://travis-ci.com/shayanypn/qrcode-panel.svg?branch=master)](https://travis-ci.com/shayanypn/qrcode-panel)
@@ -5,7 +6,8 @@
 Simple UI implemented in Vue.js to present a user account page for the QR Code App!
 
 Implemented Features:
- - Tests with `Jest` 
+ - Unit Tests handled by `Jest` 
+ - Form validation handled by [Vue Formulate](https://vueformulate.com/)
  - CI/CD using Travis and gh-pages
 
 [Live demo](https://shayanypn.github.io/qrcode-panel/)
