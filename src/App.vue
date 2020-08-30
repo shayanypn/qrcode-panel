@@ -36,6 +36,7 @@ export default class App extends Vue {}
   --color-gray: #707f86;
   --color-gray-dark: #6f7e85;
   --color-gray-darkest: #1B294B;
+  --color-red: #d43636;
 
   --shadow-default: rgba(0, 0, 0, 0.125);
   --shadow-light: rgba(0, 0, 0, 0.05);
@@ -64,7 +65,7 @@ i.far {
  * Override bootsrap
  * 
 */
-@media (min-width: 114px) {
+@media screen and (min-width: 1114px) {
   .col-mdlg {
     flex: 0 0 20%;
     max-width: 20%;
@@ -72,13 +73,16 @@ i.far {
 }
 
 .btn {
-  box-shadow: none !important;
+  box-shadow: none;
   outline: none !important;
 
   i {
     position: absolute;
     right: -5px;
     top: 7px;
+  }
+  &:focus {
+    box-shadow: none;
   }
 }
 
@@ -96,8 +100,22 @@ i.far {
   border: none;
 }
 
+.form-group {
+  .formulate-input-errors {
+    padding: 0 0 0 0.5rem;
+    font-size: 0.8em;
+    list-style: none;
+    color: var(--color-red);
+  }
+  .form-control {
+    box-shadow: none !important;
+  }
+}
+
 .form-contact {
+  position: relative;
   color: var(--color-gray-dark);
+  padding: 0.5rem 0;
   @include placeholder {
     color: var(--color-gray-light);
   }
@@ -285,6 +303,7 @@ header {
       background: var(--color-blue);
       border-color: var(--color-blue);
       color: var(--color-white);
+      box-shadow: 0 0.25em 0.5em var(--shadow-default);
       font-weight: 700;
       font-size: .8rem;
       border: none;
@@ -298,6 +317,8 @@ header {
   &.bx-info {
     background: transparent;
     border: 1px solid var(--color-gray-lightest);
+    padding: 1rem 0.5rem;
+    margin-bottom: 0.5rem;
 
     p {
       color: var(--color-blue-lightest);
@@ -356,4 +377,54 @@ header {
   }
 }
 
+.loading {
+  text-align: center;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.9);
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  border-radius: var(--radius-default);
+  top: 0px;
+  left: 0px;
+}
+
+.loading > div {
+  width: 18px;
+  height: 18px;
+  background-color: #333;
+
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.loading .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+
+.loading .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+
+@-webkit-keyframes sk-bouncedelay {
+  0%, 80%, 100% { -webkit-transform: scale(0) }
+  40% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bouncedelay {
+  0%, 80%, 100% { 
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  } 40% { 
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+  }
+}
 </style>

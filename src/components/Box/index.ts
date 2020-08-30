@@ -10,7 +10,6 @@ export default class Box extends Vue {
   @Prop() private classname!: string;
 
   get classObject(): string[] {
-    const classNames = (this.classname || '').split(' ');
-    return ['bx', ...classNames];
+    return ['bx', ...(this.classname || '').split(' ')];
   }
 }
