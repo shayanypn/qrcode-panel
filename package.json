@@ -70,6 +70,7 @@
   ],
   "jest": {
     "preset": "@vue/cli-plugin-unit-jest/presets/typescript-and-babel",
+    "collectCoverage": true,
     "moduleFileExtensions": [
       "js",
       "ts",
