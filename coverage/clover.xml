@@ -1,30 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1598767944921" clover="3.2.0">
-  <project timestamp="1598767944921" name="All files">
-    <metrics statements="24" coveredstatements="24" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2" elements="28" coveredelements="28" complexity="0" loc="24" ncloc="24" packages="4" files="4" classes="4"/>
+<coverage generated="1598805161959" clover="3.2.0">
+  <project timestamp="1598805161960" name="All files">
+    <metrics statements="48" coveredstatements="38" conditionals="2" coveredconditionals="1" methods="17" coveredmethods="8" elements="67" coveredelements="47" complexity="0" loc="48" ncloc="48" packages="6" files="6" classes="6"/>
     <package name="components.Box">
-      <metrics statements="8" coveredstatements="8" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+      <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
       <file name="index.ts" path="/private/var/www/Own/OpenSource/qrcode-panel/src/components/Box/index.ts">
-        <metrics statements="8" coveredstatements="8" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="2" type="stmt"/>
         <line num="2" count="2" type="stmt"/>
         <line num="6" count="4" type="stmt"/>
         <line num="8" count="2" type="stmt"/>
         <line num="9" count="2" type="stmt"/>
         <line num="10" count="2" type="stmt"/>
-        <line num="13" count="1" type="cond" truecount="2" falsecount="0"/>
-        <line num="14" count="1" type="stmt"/>
+        <line num="13" count="1" type="cond" truecount="1" falsecount="1"/>
       </file>
     </package>
     <package name="components.BoxIcon">
       <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="index.ts" path="/private/var/www/Own/OpenSource/qrcode-panel/src/components/BoxIcon/index.ts">
         <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="6" count="2" type="stmt"/>
-        <line num="7" count="1" type="stmt"/>
-        <line num="8" count="1" type="stmt"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="6" count="4" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
       </file>
     </package>
     <package name="components.Header">
@@ -38,16 +37,53 @@
         <line num="10" count="2" type="stmt"/>
       </file>
     </package>
+    <package name="components.Loading">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="index.ts" path="/private/var/www/Own/OpenSource/qrcode-panel/src/components/Loading/index.ts">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="6" count="4" type="stmt"/>
+      </file>
+    </package>
     <package name="containers.Account">
-      <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <metrics statements="24" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="12" coveredmethods="3"/>
       <file name="index.ts" path="/private/var/www/Own/OpenSource/qrcode-panel/src/containers/Account/index.ts">
-        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <metrics statements="24" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="12" coveredmethods="3"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
-        <line num="15" count="2" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="33" count="2" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="41" count="0" type="stmt"/>
+        <line num="45" count="2" type="stmt"/>
+        <line num="47" count="2" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="services.API">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <file name="index.ts" path="/private/var/www/Own/OpenSource/qrcode-panel/src/services/API/index.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="7" count="3" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
       </file>
     </package>
   </project>

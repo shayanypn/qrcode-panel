@@ -3,6 +3,7 @@ import Account from './index';
 import Header from '../../components/Header'
 import Box from '../../components/Box'
 import BoxIcon from '../../components/BoxIcon'
+import Loading from "@/components/Loading";
 
 describe('Account', () => {
   test('page should render correctly', () => {
@@ -11,6 +12,7 @@ describe('Account', () => {
     expect(wrapper.find('h4').text()).toMatch('Information');
     expect(wrapper.findAll('h4').length).toBe(4);
     expect(wrapper.findAllComponents(Header)).toHaveLength(1);
+    expect(wrapper.findAllComponents(Loading)).toHaveLength(1);
     expect(wrapper.findAllComponents(Box)).toHaveLength(8);
     expect(wrapper.findAllComponents(BoxIcon)).toHaveLength(5);
   });

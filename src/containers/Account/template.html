@@ -2,36 +2,36 @@
   <Header title="Egoditor GmbH" />
   <main class="container pt-5">
     <div class="row">
-      <div class="col-12 col-md-5">
+      <div class="col-12 col-md-7 col-lg-5">
         <div class="card">
           <div class="card-body">
             <h4>Information</h4>
-            <div class="row mb-4">
-              <div class="col-12 col-md-4 pr-1">
+            <div class="row mb-4 pl-2 pr-2">
+              <div class="col-12 col-lg-4 pl-1 pr-1">
                 <Box
                   title="CUSTOMER ID"
-                  face="app-u-103"
+                  v-bind:face="modelUser.id"
                   classname="bx-info"
                 />
               </div>
-              <div class="col-12 col-md-4 pl-1 pr-1">
+              <div class="col-12 col-lg-4 pl-1 pr-1">
                 <Box
                   title="SIGNUP DATE"
-                  face="23/8/2020"
+                  v-bind:face="modelUser.created_at"
                   classname="bx-info"
                 />
               </div>
-              <div class="col-12 col-md-4 pl-1">
+              <div class="col-12 col-lg-4 pl-1 pr-1">
                 <Box
                   title="Account"
-                  face="Professional"
+                  v-bind:face="modelUser.account_type"
                   classname="bx-info"
                 />
               </div>
-              <div class="col-12 col-md-12">
+              <div class="col-12 col-md-12 pl-1 pr-1">
                 <Box
                   title="LOGIN EMAIL"
-                  face="designcodes@qrcg.com"
+                  v-bind:face="modelUser.email"
                   classname="bx-info bx-info-complex"
                 >
                   <div class="btn-group btn-group-sm btn-group-vertical">
@@ -43,45 +43,100 @@
             </div>
             <h4>Primary Contact</h4>
             <p>Please provide your contact information below.</p>
-            <form class="form-contact mt-4">
-              <div class="form-group">
-                <label for="firstname">First Name</label>
-                <input type="text" class="form-control" name="firstname" placeholder="shayan">
-              </div>
-              <div class="form-group">
-                <label for="lastname">Last Name</label>
-                <input type="text" class="form-control" name="lastname" placeholder="yazdanpanah">
-              </div>
-              <div class="form-group">
-                <label for="phonenumber">Phone Number</label>
-                <input type="text" class="form-control" name="phonenumber" placeholder="+0123456789">
-              </div>
-              <div class="form-group">
-                <label for="company">Company</label>
-                <input type="text" class="form-control" name="company" placeholder="Egoditor GmbH">
-              </div>
-              <div class="form-group">
-                <label for="street">Street</label>
-                <input type="text" class="form-control" name="street" placeholder="Apartment, studio, or floor">
-              </div>
+            <form
+              class="form-contact mt-4"
+              @submit.prevent="handleSubmit"
+            >
+              <Loading
+                v-show="enableLoading"
+              />
+              <FormulateInput
+                type="text"
+                name="firstname"
+                label="First Name"
+                validation="bail|required"
+                validation-name="first name"
+                placeholder="shayan"
+                v-model="modelUser.first_name"
+              />
+              <FormulateInput
+                type="text"
+                name="lastname"
+                label="Last Name"
+                validation="bail|required"
+                validation-name="last name"
+                placeholder="yazdanpanah"
+                v-model="modelUser.last_name"
+              />
+              <FormulateInput
+                type="text"
+                name="phonenumber"
+                label="Phone Number"
+                validation="bail|required"
+                validation-name="phone number"
+                placeholder="+0123456"
+                v-model="modelUser.phone_number"
+              />
+              <FormulateInput
+                type="text"
+                name="company"
+                label="Company"
+                validation="bail|required"
+                validation-name="company"
+                placeholder="Egoditor GmbH"
+                v-model="modelUser.company"
+              />
+              <FormulateInput
+                type="text"
+                name="street"
+                label="Street"
+                validation="bail|required"
+                validation-name="street"
+                placeholder="Apartment, studio, or floor"
+                v-model="modelUser.street"
+              />
+
               <div class="form-row">
                 <div class="col-md-8">
-                  <div class="form-group">
-                    <label for="city">City</label>
-                    <input type="text" class="form-control" name="city" placeholder="shiraz">
-                  </div>
+                  <FormulateInput
+                    type="text"
+                    name="city"
+                    label="City"
+                    validation="bail|required"
+                    validation-name="city"
+                    placeholder="Shiraz"
+                    v-model="modelUser.city"
+                  />
                 </div>
                 <div class="col-md-4">
-                  <div class="form-group">
-                    <label for="zipcode">Zip Code</label>
-                    <input type="text" class="form-control" name="zipcode" placeholder="123456">
-                  </div>
+                  <FormulateInput
+                    type="text"
+                    name="zipcode"
+                    label="Zip Code"
+                    validation="bail|required"
+                    validation-name="zipcode"
+                    placeholder="123456"
+                    v-model="modelUser.zipcode"
+                  />
                 </div>
               </div>
-              <div class="form-group">
-                <label for="website">Website</label>
-                <input type="text" class="form-control" name="website" placeholder="www.your-website.com">
-              </div>
+              <FormulateInput
+                type="select"
+                name="country"
+                label="Country"
+                :options="{Germany: 'Germany', Netherland: 'Netherland', Spain: 'Spain'}"
+                placeholder="Select a country"
+                v-model="modelUser.country"
+              />
+              <FormulateInput
+                type="text"
+                name="website"
+                label="Website"
+                validation="bail|required"
+                validation-name="website"
+                placeholder="www.your-website.com"
+                v-model="modelUser.website"
+              />
               <div class="form-group text-right mb-0">
                 <button type="submit" class="btn rounded-pill pl-3 pr-3">SAVE</button>
               </div>
@@ -89,7 +144,7 @@
           </div>
         </div>
       </div>
-      <div class="col-12 col-md-7">
+      <div class="col-12 col-md-5 col-lg-7">
         <div class="row mb-3">
           <div class="col">
             <h4>Usage</h4>
@@ -99,44 +154,44 @@
           <div class="col-12 col-lg-6 col-xl-3 mb-4">
             <Box
               title="SCANS"
-              face="3614408"
+              v-bind:face="modelPlan.scan"
               classname="bx-statics"
             >
               <span>/</span>
-              <em>Unlimited</em>
+              <em>{{modelPlan.scan_max}}</em>
               <button class="btn btn-xs">UPGRADE</button>
             </Box>
           </div>
           <div class="col-12 col-lg-6 col-xl-3 mb-4">
             <Box
               title="DYNAMIC CODES"
-              face="587"
+              v-bind:face="modelPlan.dynamic_code"
               classname="bx-statics"
             >
               <span>/</span>
-              <em>2500</em>
+              <em>{{modelPlan.dynamic_code}}</em>
               <button class="btn btn-xs">UPGRADE</button>
             </Box>
           </div>
           <div class="col-12 col-lg-6 col-xl-3 mb-4">
             <Box
               title="STATIC CODES"
-              face="49"
+              v-bind:face="modelPlan.static_code"
               classname="bx-statics"
             >
               <span>/</span>
-              <em>2500</em>
+              <em>{{modelPlan.static_code_max}}</em>
               <button class="btn btn-xs">UPGRADE</button>
             </Box>
           </div>
           <div class="col-12 col-lg-6 col-xl-3 mb-4">
             <Box
               title="USERS"
-              face="1"
+              v-bind:face="modelPlan.user"
               classname="bx-statics"
             >
               <span>/</span>
-              <em>6</em>
+              <em>{{modelPlan.user_max}}</em>
               <button class="btn btn-xs">UPGRADE</button>
             </Box>
           </div>
@@ -148,7 +203,7 @@
             <p>For the best possible experience, please let us know who you are</p>
           </div>
         </div>
-        <div class="row mb-5 d-flex flex-nowrap">
+        <div class="row mb-5">
           <div class="col-12 col-md-6 col-mdlg">
             <BoxIcon
               icon="far fa-briefcase"
