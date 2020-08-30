@@ -1,8 +1,8 @@
-import { shallowMount } from "@vue/test-utils";
-import Header from "./index";
+import { shallowMount } from '@vue/test-utils';
+import Header from './index';
 
 describe('Header', () => {
-  test('render title', () => {
+  test('should render title', () => {
     const title = 'custom title';
     const wrapper = shallowMount(Header, {
       propsData: { title }
@@ -18,7 +18,7 @@ describe('Header', () => {
     expect(wrapper.find('.box-title h1').isVisible()).toBe(true);
     expect(wrapper.find('.box-title input').isVisible()).toBe(false);
 
-	await wrapper.find('.box-title .btn').trigger('click');
+    await wrapper.find('.box-title .btn').trigger('click');
 
     expect(wrapper.find('.box-title  h1').isVisible()).toBe(false);
     expect(wrapper.find('.box-title  input').isVisible()).toBe(true);
@@ -30,11 +30,11 @@ describe('Header', () => {
     const wrapper = shallowMount(Header, {
       propsData: { title }
     });
-	await wrapper.find('.box-title .btn').trigger('click');
+    await wrapper.find('.box-title .btn').trigger('click');
 
-	const textInput = wrapper.find('.box-title input');
-	await textInput.setValue(new_title);
-	await wrapper.find('.box-title .btn').trigger('click');
+    const textInput = wrapper.find('.box-title input');
+    await textInput.setValue(new_title);
+    await wrapper.find('.box-title .btn').trigger('click');
 
     expect(wrapper.find('.box-title h1').text()).toMatch(new_title);
   });

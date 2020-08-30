@@ -1,25 +1,29 @@
 <template>
   <div id="app">
-    <Header title="Egoditor GmbH" />
-    <Account />
+    <AccountPage />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import Header from "@/components/Header";
-import Account from "@/containers/Account";
+import AccountPage from "@/containers/Account";
 
 @Component({
   components: {
-    Header,
-    Account,
+    AccountPage,
   },
 })
 export default class App extends Vue {}
 </script>
 
 <style lang="scss">
+@mixin placeholder {
+  ::-webkit-input-placeholder {@content}
+  :-moz-placeholder           {@content}
+  ::-moz-placeholder          {@content}
+  :-ms-input-placeholder      {@content}  
+}
+
 :root {
   --color-base: #f5f8fa;
   --color-white: #ffffff;
@@ -27,12 +31,15 @@ export default class App extends Vue {}
   --color-blue: #00bfff;
   --color-blue-dark: #294270;
   --color-blue-darkest: #1974d2;
+  --color-gray-lightest: #e6edf0;
   --color-gray-light: #c7ced0;
   --color-gray: #707f86;
+  --color-gray-dark: #6f7e85;
   --color-gray-darkest: #1B294B;
 
-  --shadow-default: rgba(0,0,0,.125);
-  --radius-default: 0.5em;
+  --shadow-default: rgba(0, 0, 0, 0.125);
+  --shadow-light: rgba(0, 0, 0, 0.05);
+  --radius-default: 0.325em;
 }
 
 #app {
@@ -87,6 +94,13 @@ i.far {
 .card {
   box-shadow: 0 0 0.25em var(--shadow-default);
   border: none;
+}
+
+.form-contact {
+  color: var(--color-gray-dark);
+  @include placeholder {
+    color: var(--color-gray-light);
+  }
 }
 
 
@@ -216,12 +230,16 @@ header {
   background: var(--color-white);
   border-radius: var(--radius-default);
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin-bottom: 1rem;
 
   &.bx-who-are {
     text-align: center;
     color: var(--color-blue);
-    box-shadow: 0.25em 0.25em 0.75em var(--shadow-default);
-    margin-bottom: 1rem;
+    box-shadow: 0.25em 0.25em 0.75em var(--shadow-light);
 
     i {
       color: var(--color-blue);
@@ -239,11 +257,7 @@ header {
   &.bx-statics {
     background: transparent;
     border: 1px solid var(--color-gray-light);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     padding: 1.25rem;
-    position: relative;
 
     p {
       color: var(--color-blue-lightest);
@@ -280,6 +294,65 @@ header {
       position: absolute;
       bottom: -14px;
     }
+  }
+  &.bx-info {
+    background: transparent;
+    border: 1px solid var(--color-gray-lightest);
+
+    p {
+      color: var(--color-blue-lightest);
+      opacity: .7;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: .8rem;
+      margin-bottom: 0.5rem;
+    }
+    strong {
+      color: var(--color-blue-dark);
+      opacity: .8;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+    &.bx-info-complex {
+      align-items: flex-start;
+
+      .btn-group {
+        position: absolute;
+        right: 5px;
+        top: 11px;
+        width: 110px;
+
+        .btn {
+          color: var(--color-blue-darkest);
+          font-weight: 700;
+          text-align: right;
+        }
+      }
+    }
+  }
+}
+
+.form-contact {
+  .form-group {
+    position: relative;
+    margin-bottom: 1.25rem;
+
+    label {
+      margin: 0;
+      position: absolute;
+      font-size: 0.725em;
+      background: var(--color-white);
+      padding: 0 0.5em;
+      left: 6px;
+      top: -8px;
+      color: var(--color-gray-dark);
+    }
+  }
+  .btn {
+    background: #e1e4e9;
+    border-color: #e1e4e9;
+    color: var(--color-gray-dark);
+    font-weight: bold;
   }
 }
 
