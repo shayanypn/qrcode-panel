@@ -1,8 +1,9 @@
 import Vue from 'vue';
 import VueI18n, { LocaleMessages } from 'vue-i18n';
+import requireContext from 'require-context.macro';
 
 const loadLocaleMessages = (): LocaleMessages => {
-  const translations = require.context('./translations', true, /[A-Za-z0-9-_,\s]+\.json$/i);
+  const translations = requireContext('./translations', true, /[A-Za-z0-9-_,\s]+\.json$/i);
   const output: LocaleMessages = {};
 
   translations.keys().forEach(key => {

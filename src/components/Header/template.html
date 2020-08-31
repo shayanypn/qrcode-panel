@@ -25,6 +25,7 @@
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
           <a 
+            id="lng-fr" 
             v-bind:class="['nav-link', 'nav-link-flag', { active: activeLanguage == 'fr' }]"
             href="#"
             @click="handleLanguage('fr')"
@@ -37,6 +38,7 @@
         </li>
         <li class="nav-item">
           <a 
+            id="lng-de"
             v-bind:class="['nav-link', 'nav-link-flag', { active: activeLanguage == 'de' }]"
             href="#"
             @click="handleLanguage('de')"
@@ -49,6 +51,7 @@
         </li>
         <li class="nav-item">
           <a 
+            id="lng-en"
             v-bind:class="['nav-link', 'nav-link-flag', { active: activeLanguage == 'en' }]"
             href="#"
             @click="handleLanguage('en')"
@@ -72,7 +75,7 @@
         </li>
         <div class="nav-item nav-item-divider"></div>
         <li class="nav-item">
-          <a class="nav-link" href="#">
+          <a id="a-account" class="nav-link" href="#">
             <i class="far fa-user"></i>
             {{ $tc('Account') }}
           </a>
