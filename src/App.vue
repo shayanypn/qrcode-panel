@@ -193,6 +193,22 @@ header {
         color: var(--color-blue);
         padding: 0 0.125em;
       }
+      &.nav-link-flag {
+        padding-right: .125rem;
+        padding-left: .125rem;
+        opacity: 0.3;
+
+        img {
+          width: 30px;
+          height: 18px;
+          border-radius: 3px;
+          position: relative;
+          top: -2px;
+        }
+        &.active {
+          opacity: 1;
+        }
+      }
     }
   }
   .nav-tabs {
@@ -258,6 +274,7 @@ header {
     text-align: center;
     color: var(--color-blue);
     box-shadow: 0.25em 0.25em 0.75em var(--shadow-light);
+    padding: 1rem 0.5rem;
 
     i {
       color: var(--color-blue);
@@ -275,7 +292,7 @@ header {
   &.bx-statics {
     background: transparent;
     border: 1px solid var(--color-gray-light);
-    padding: 1.25rem;
+    padding: 1.25rem .25rem;
 
     p {
       color: var(--color-blue-lightest);
@@ -317,7 +334,7 @@ header {
   &.bx-info {
     background: transparent;
     border: 1px solid var(--color-gray-lightest);
-    padding: 1rem 0.5rem;
+    padding: 1rem 0.25rem;
     margin-bottom: 0.5rem;
 
     p {
@@ -341,7 +358,7 @@ header {
         position: absolute;
         right: 5px;
         top: 11px;
-        width: 110px;
+        width: 150px;
 
         .btn {
           color: var(--color-blue-darkest);

@@ -1,11 +1,15 @@
 import { shallowMount } from '@vue/test-utils';
 import Header from './index';
+import i18n from '../../i18n';
 
 describe('Header', () => {
+  const $tc = () => {}
+
   test('should render title', () => {
     const title = 'custom title';
     const wrapper = shallowMount(Header, {
-      propsData: { title }
+      propsData: { title },
+      i18n
     });
     expect(wrapper.find('h1').text()).toMatch(title);
   });

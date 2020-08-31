@@ -5,44 +5,44 @@
       <div class="col-12 col-md-7 col-lg-5">
         <div class="card">
           <div class="card-body">
-            <h4>Information</h4>
+            <h4>{{ $tc('Information') }}</h4>
             <div class="row mb-4 pl-2 pr-2">
               <div class="col-12 col-lg-4 pl-1 pr-1">
                 <Box
-                  title="CUSTOMER ID"
+                  v-bind:title="$tc('CUSTOMER ID')"
                   v-bind:face="modelUser.id"
                   classname="bx-info"
                 />
               </div>
               <div class="col-12 col-lg-4 pl-1 pr-1">
                 <Box
-                  title="SIGNUP DATE"
+                  v-bind:title="$tc('SIGNUP DATE')"
                   v-bind:face="modelUser.created_at"
                   classname="bx-info"
                 />
               </div>
               <div class="col-12 col-lg-4 pl-1 pr-1">
                 <Box
-                  title="Account"
-                  v-bind:face="modelUser.account_type"
+                  v-bind:title="$tc('Account')"
+                  v-bind:face="$tc(modelUser.account_type)"
                   classname="bx-info"
                 />
               </div>
               <div class="col-12 col-md-12 pl-1 pr-1">
                 <Box
-                  title="LOGIN EMAIL"
+                  v-bind:title="$tc('LOGIN EMAIL')"
                   v-bind:face="modelUser.email"
                   classname="bx-info bx-info-complex"
                 >
                   <div class="btn-group btn-group-sm btn-group-vertical">
-                    <button class="btn btn-xs">Password</button>
-                    <button class="btn btn-xs">Change Email</button>
+                    <button class="btn btn-xs">{{ $tc('Password') }}</button>
+                    <button class="btn btn-xs">{{ $tc('Change Email') }}</button>
                   </div>
                 </Box>
               </div>
             </div>
-            <h4>Primary Contact</h4>
-            <p>Please provide your contact information below.</p>
+            <h4>{{ $tc('Primary Contact') }}</h4>
+            <p>{{ $tc('Please provide your contact information below.') }}</p>
             <form
               class="form-contact mt-4"
               @submit.prevent="handleSubmit"
@@ -53,45 +53,45 @@
               <FormulateInput
                 type="text"
                 name="firstname"
-                label="First Name"
+                v-bind:label="$tc('First Name')"
                 validation="bail|required"
-                validation-name="first name"
+                v-bind:validation-name="$tc('First Name')"
                 placeholder="shayan"
                 v-model="modelUser.first_name"
               />
               <FormulateInput
                 type="text"
                 name="lastname"
-                label="Last Name"
+                v-bind:label="$tc('Last Name')"
                 validation="bail|required"
-                validation-name="last name"
+                v-bind:validation-name="$tc('Last Name')"
                 placeholder="yazdanpanah"
                 v-model="modelUser.last_name"
               />
               <FormulateInput
                 type="text"
                 name="phonenumber"
-                label="Phone Number"
+                v-bind:label="$tc('Phone Number')"
                 validation="bail|required"
-                validation-name="phone number"
+                v-bind:validation-name="$tc('Phone Number')"
                 placeholder="+0123456"
                 v-model="modelUser.phone_number"
               />
               <FormulateInput
                 type="text"
                 name="company"
-                label="Company"
+                v-bind:label="$tc('Company')"
                 validation="bail|required"
-                validation-name="company"
+                v-bind:validation-name="$tc('Company')"
                 placeholder="Egoditor GmbH"
                 v-model="modelUser.company"
               />
               <FormulateInput
                 type="text"
                 name="street"
-                label="Street"
+                v-bind:label="$tc('Street')"
                 validation="bail|required"
-                validation-name="street"
+                v-bind:validation-name="$tc('Street')"
                 placeholder="Apartment, studio, or floor"
                 v-model="modelUser.street"
               />
@@ -101,9 +101,9 @@
                   <FormulateInput
                     type="text"
                     name="city"
-                    label="City"
+                    v-bind:label="$tc('City')"
                     validation="bail|required"
-                    validation-name="city"
+                    v-bind:validation-name="$tc('City')"
                     placeholder="Shiraz"
                     v-model="modelUser.city"
                   />
@@ -112,9 +112,9 @@
                   <FormulateInput
                     type="text"
                     name="zipcode"
-                    label="Zip Code"
+                    v-bind:label="$tc('Zip Code')"
                     validation="bail|required"
-                    validation-name="zipcode"
+                    v-bind:validation-name="$tc('Zip Code')"
                     placeholder="123456"
                     v-model="modelUser.zipcode"
                   />
@@ -123,7 +123,7 @@
               <FormulateInput
                 type="select"
                 name="country"
-                label="Country"
+                v-bind:label="$tc('Country')"
                 :options="{Germany: 'Germany', Netherland: 'Netherland', Spain: 'Spain'}"
                 placeholder="Select a country"
                 v-model="modelUser.country"
@@ -131,14 +131,16 @@
               <FormulateInput
                 type="text"
                 name="website"
-                label="Website"
+                v-bind:label="$tc('Website')"
                 validation="bail|required"
-                validation-name="website"
+                v-bind:validation-name="$tc('Website')"
                 placeholder="www.your-website.com"
                 v-model="modelUser.website"
               />
               <div class="form-group text-right mb-0">
-                <button type="submit" class="btn rounded-pill pl-3 pr-3">SAVE</button>
+                <button type="submit" class="btn rounded-pill pl-3 pr-3">
+                  {{ $tc('SAVE') }}
+                </button>
               </div>
             </form>
           </div>
@@ -147,91 +149,91 @@
       <div class="col-12 col-md-5 col-lg-7">
         <div class="row mb-3">
           <div class="col">
-            <h4>Usage</h4>
+            <h4>{{ $tc('Usage') }}</h4>
           </div>
         </div>
         <div class="row mb-5">
           <div class="col-12 col-lg-6 col-xl-3 mb-4">
             <Box
-              title="SCANS"
+              v-bind:title="$tc('SCANS')"
               v-bind:face="modelPlan.scan"
               classname="bx-statics"
             >
               <span>/</span>
-              <em>{{modelPlan.scan_max}}</em>
-              <button class="btn btn-xs">UPGRADE</button>
+              <em>{{ $tc(modelPlan.scan_max) }}</em>
+              <button class="btn btn-xs">{{ $tc('UPGRADE') }}</button>
             </Box>
           </div>
           <div class="col-12 col-lg-6 col-xl-3 mb-4">
             <Box
-              title="DYNAMIC CODES"
+              v-bind:title="$tc('DYNAMIC CODES')"
               v-bind:face="modelPlan.dynamic_code"
               classname="bx-statics"
             >
               <span>/</span>
               <em>{{modelPlan.dynamic_code}}</em>
-              <button class="btn btn-xs">UPGRADE</button>
+              <button class="btn btn-xs">{{ $tc('UPGRADE') }}</button>
             </Box>
           </div>
           <div class="col-12 col-lg-6 col-xl-3 mb-4">
             <Box
-              title="STATIC CODES"
+              v-bind:title="$tc('STATIC CODES')"
               v-bind:face="modelPlan.static_code"
               classname="bx-statics"
             >
               <span>/</span>
               <em>{{modelPlan.static_code_max}}</em>
-              <button class="btn btn-xs">UPGRADE</button>
+              <button class="btn btn-xs">{{ $tc('UPGRADE') }}</button>
             </Box>
           </div>
           <div class="col-12 col-lg-6 col-xl-3 mb-4">
             <Box
-              title="USERS"
+              v-bind:title="$tc('USERS')"
               v-bind:face="modelPlan.user"
               classname="bx-statics"
             >
               <span>/</span>
               <em>{{modelPlan.user_max}}</em>
-              <button class="btn btn-xs">UPGRADE</button>
+              <button class="btn btn-xs">{{ $tc('UPGRADE') }}</button>
             </Box>
           </div>
         </div>
 
         <div class="row mb-3">
           <div class="col">
-            <h4>Who are you?</h4>
-            <p>For the best possible experience, please let us know who you are</p>
+            <h4>{{ $tc('Who are you?') }}</h4>
+            <p>{{ $tc('For the best possible experience, please let us know who you are') }}</p>
           </div>
         </div>
         <div class="row mb-5">
           <div class="col-12 col-md-6 col-mdlg">
             <BoxIcon
               icon="far fa-briefcase"
-              title="business"
+              v-bind:title="$tc('BUSINESS')"
             />
           </div>
           <div class="col-12 col-md-6 col-mdlg">
             <BoxIcon
               icon="far fa-store"
-              title="agency"
+              v-bind:title="$tc('AGENCY')"
             />
           </div>
           <div class="col-12 col-md-6 col-mdlg">
             <BoxIcon
               icon="far fa-hand-holding-heart"
-              title="nonprofit"
+              v-bind:title="$tc('NONPROFIT')"
             />
           </div>
           <div class="col-12 col-md-6 col-mdlg">
             <BoxIcon
               icon="far fa-graduation-cap"
-              title="educational"
+              v-bind:title="$tc('EDUCATIONAL')"
             />
           </div>
           <div class="col-12 col-md-6 col-mdlg">
             <BoxIcon
               icon="far fa-user"
-              title="private"
+              v-bind:title="$tc('PRIVATE')"
             />
           </div>
         </div>

@@ -4,10 +4,11 @@ import Header from '../../components/Header'
 import Box from '../../components/Box'
 import BoxIcon from '../../components/BoxIcon'
 import Loading from "@/components/Loading";
+import i18n from '../../i18n';
 
 describe('Account', () => {
   test('page should render correctly', () => {
-    const wrapper = shallowMount(Account);
+    const wrapper = shallowMount(Account, i18n);
 
     expect(wrapper.find('h4').text()).toMatch('Information');
     expect(wrapper.findAll('h4').length).toBe(4);
@@ -18,7 +19,7 @@ describe('Account', () => {
   });
 
   test('form should render correctly', () => {
-    const wrapper = shallowMount(Account);
+    const wrapper = shallowMount(Account, i18n);
     const contact_form = wrapper.find('form.form-contact');
 
     expect(contact_form.findAll('[name="firstname"]').exists()).toBe(true);
