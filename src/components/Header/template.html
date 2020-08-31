@@ -24,6 +24,46 @@
       </ul>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
+          <a 
+            id="lng-fr" 
+            v-bind:class="['nav-link', 'nav-link-flag', { active: activeLanguage == 'fr' }]"
+            href="#"
+            @click="handleLanguage('fr')"
+          >
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Ensign_of_France.svg/250px-Ensign_of_France.svg.png"
+              alt="france logo"
+            />
+          </a>
+        </li>
+        <li class="nav-item">
+          <a 
+            id="lng-de"
+            v-bind:class="['nav-link', 'nav-link-flag', { active: activeLanguage == 'de' }]"
+            href="#"
+            @click="handleLanguage('de')"
+          >
+            <img
+              src="https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/800px-Flag_of_Germany.svg.png"
+              alt="german logo"
+            />
+          </a>
+        </li>
+        <li class="nav-item">
+          <a 
+            id="lng-en"
+            v-bind:class="['nav-link', 'nav-link-flag', { active: activeLanguage == 'en' }]"
+            href="#"
+            @click="handleLanguage('en')"
+          >
+            <img
+              src="https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_the_United_Kingdom.svg/1200px-Flag_of_the_United_Kingdom.svg.png"
+              alt="uk logo"
+            />
+          </a>
+        </li>
+        <div class="nav-item nav-item-divider"></div>
+        <li class="nav-item">
           <a class="nav-link" href="#">
             <i class="far fa-bell"></i>
           </a>
@@ -35,9 +75,9 @@
         </li>
         <div class="nav-item nav-item-divider"></div>
         <li class="nav-item">
-          <a class="nav-link" href="#">
+          <a id="a-account" class="nav-link" href="#">
             <i class="far fa-user"></i>
-            Account
+            {{ $tc('Account') }}
           </a>
         </li>
       </ul>
@@ -61,7 +101,7 @@
           class="btn btn-xs"
           @click="enableEdit = !enableEdit"
         >
-          {{ enableEdit ? 'Save' : 'Edit'}}
+          {{ $tc(enableEdit ? 'Save' : 'Edit') }}
           <i
             class="far fa-pencil-alt"
             v-show="!enableEdit"
@@ -77,22 +117,22 @@
       <div class="col">
         <ul class="nav nav-tabs">
           <li class="nav-item">
-            <a class="nav-link active" href="#">Account</a>
+            <a class="nav-link active" href="#">{{ $tc('Account') }}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Settings</a>
+            <a class="nav-link" href="#">{{ $tc('Settings') }}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">User Management</a>
+            <a class="nav-link" href="#">{{ $tc('User Management') }}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">White Label</a>
+            <a class="nav-link" href="#">{{ $tc('White Label') }}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">API Keys</a>
+            <a class="nav-link" href="#">{{ $tc('API Keys') }}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Billing</a>
+            <a class="nav-link" href="#">{{ $tc('Billing') }}</a>
           </li>
         </ul>
       </div>
