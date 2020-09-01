@@ -5,6 +5,9 @@
       <div class="col-12 col-md-7 col-lg-5">
         <div class="card">
           <div class="card-body">
+            <Loading
+              v-show="enableLoading"
+            />
             <h4>{{ $tc('Information') }}</h4>
             <div class="row mb-4 pl-2 pr-2">
               <div class="col-12 col-lg-4 pl-1 pr-1">
@@ -47,9 +50,6 @@
               class="form-contact mt-4"
               @submit.prevent="handleSubmit"
             >
-              <Loading
-                v-show="enableLoading"
-              />
               <FormulateInput
                 type="text"
                 name="firstname"
@@ -240,5 +240,4 @@
       </div>
     </div>
   </main>
-
 </div>
